@@ -20,7 +20,7 @@ export async function Articles() {
             return `
               <div 
                 id="article-${article.id}" 
-                class="markdown-body article mb-4" 
+                class="article mb-4" 
               >
                 <h1 class="text-2xl font-bold pt-4 mb-3 break-words">${article.frontmatter.title}</h1>
           
@@ -34,7 +34,7 @@ export async function Articles() {
                   Published on: ${new Date(article.createdAt).toLocaleDateString()}
                 </div>
                 <div 
-                  class="content truncate-multiline overflow-hidden text-ellipsis cursor-pointer" 
+                  class="markdown-body content truncate-multiline overflow-hidden text-ellipsis cursor-pointer" 
                 >
                   ${article.html}
                 </div>

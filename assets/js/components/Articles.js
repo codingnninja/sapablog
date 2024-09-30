@@ -20,7 +20,7 @@ export async function Articles() {
             return `
               <div 
                 id="article-${article.id}" 
-                class="article mb-4" 
+                class="markdown-body article mb-4" 
               >
                 <h1 class="text-2xl font-bold pt-4 mb-3 break-words">${article.frontmatter.title}</h1>
           

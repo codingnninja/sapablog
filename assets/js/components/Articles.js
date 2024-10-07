@@ -1,4 +1,5 @@
 import { ReadMore } from './ReadMore.js'
+import { ArticleMetaData } from './ArticleMetaData.js';
 import { $register } from '../lib/render@0.0.19.min.js';
 
 export async function Articles() {
@@ -22,24 +23,21 @@ export async function Articles() {
                 id="article-${article.id}" 
                 class="article mb-4" 
               >
-                <h1 class="text-2xl font-bold pt-4 mb-3 break-words">${article.frontmatter.title}</h1>
-          
-                <div class="tags flex flex-wrap mb-5">
-                  ${article.frontmatter.tags
+                <h1 class="text-3xl font-bold pt-4 mb-3 break-words title">${article.frontmatter.title}</h1>
+                <div class="tags flex flex-wrap mb-3">
+                  ${article.frontmatter.tags && article.frontmatter.tags
                     .split(',')
                     .map((tag) => `<div class="tag bg-gray-200 py-1 px-3 rounded-full mr-2 mb-2 text-sm">${tag}</div>`)
                     .join('')}
                 </div>
-                <div class="created_at text-gray-500 mb-2">
-                  Published on: ${new Date(article.createdAt).toLocaleDateString()}
-                </div>
+                <ArticleMetaData metadata=${article.metadata} date=${article.createdAt} />
                 <div 
                   class="markdown-body content truncate-multiline overflow-hidden text-ellipsis cursor-pointer" 
                 >
                   ${article.html}
                 </div>
               </div>
-              <ReadMore status="false" articleId=${article.id} />
+              <ReadMore status="false" articleId=${article.id} action="add" />
             `;}).join('') : "<div>No more articles. Check back later.</div>"
       }
     </div>
@@ -48,4 +46,4 @@ export async function Articles() {
   `;
 }
 
-$register(ReadMore);
+$register(ReadMore, ArticleMetaData);

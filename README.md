@@ -18,3 +18,7 @@ auth({
 - Get your github token
 
 You will be asked to enter your github token whenever you want to post an articles. Click [get github token]('assets/media/images/sapablog%20token%20generation%20demo.gif') and follow the image below to set it up.
+
+## Install vscode extension
+
+Install `leet-html` for syntax highlighting.

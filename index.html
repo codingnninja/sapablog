@@ -11,9 +11,12 @@
     <script src="./assets/js/lib/marked@4.3.0.js"></script>
 
     <style>
+      code {
+        padding: 3px;
+      }
       .truncate-multiline {
         display: -webkit-box;
-        -webkit-line-clamp: 3; /* Number of lines to show */
+        -webkit-line-clamp: 2; /* Number of lines to show */
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -31,15 +34,44 @@
             padding: 10px;
             border-radius: 5px;
         }
-        img {
-          max-width: 100%;
-          height: auto;
-        }
-        pre {
-          background-color: #f4f4f4;
-          padding: 15px;
-          border-radius: 5px;
+        /* Main container for code blocks */
+        .shiki {
+          background: #1e1e1e;
+          padding: 1.5rem;
+          border-radius: 0.5rem;
+          margin: 1rem 0;
           overflow-x: auto;
+        }
+
+        /* Code block content */
+        .shiki pre {
+          margin: 0;
+          font-family: 'Fira Code', Monaco, Consolas, 'Courier New', monospace;
+          font-size: 0.9rem;
+          line-height: 1.5;
+        }
+
+        /* Individual lines */
+        .line {
+          display: block;
+          width: 100%;
+        }
+
+        .space {
+          display: inline-block;
+          width: 0.5em;
+        }
+        /* Focus styles for better accessibility */
+        .shiki:focus-within {
+          outline: 2px solid #569cd6;
+          outline-offset: 2px;
+        }
+
+        /* Dark mode adjustments */
+        @media (prefers-color-scheme: dark) {
+          .shiki {
+            background: #1a1a1a;
+          }
         }
     </style>
   </head>

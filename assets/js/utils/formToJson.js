@@ -1,3 +1,5 @@
+
+// to use this just call it like formToJSON('formId', options);
 export function formToJSON(form, options = {}) {
     const config = {
         includeDisabled: false,

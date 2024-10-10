@@ -6,9 +6,7 @@ export async function Publish() {
   const frontmatterPattern = /^---\s*([\s\S]*?)\s*---/;
 
   if (!frontmatterPattern.test(markdownInput.value)) {
-    const errString =
-    "A proper Markdown string with frontmatter is expected";
-    $select(`#editor-notif[add|textContent=${errString}]`);
+    $select(`#editor-notif[add|textContent=A proper Markdown string with frontmatter is expected]`);
     return "";
   }
 

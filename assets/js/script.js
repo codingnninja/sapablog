@@ -15,7 +15,7 @@ import {
   startPrivateAuth,
   endPrivateAuth,
   resetTokenInBrowser
-} from "./lib/sapabase@01.0.5.min.js";
+} from "./lib/sapabase@1.0.5.min.js";
 
 import {
   $render,

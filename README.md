@@ -21,7 +21,7 @@ Check [Sapabase docs]() for more inforamtion.
 
 You will be asked to enter your github token whenever you want to post an articles. Click [get github token](https://github.com/settings/tokens) and follow the image below to set it up.
 
-![get github token](assets/media/images/sapablog%20token%20generation%20demo.gif)
+![token generation demo](assets/media/images/sapablog%20token%20generation%20demo.gif)
 
 ## Install vscode extension
 

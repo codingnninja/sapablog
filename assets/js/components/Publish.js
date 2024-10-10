@@ -1,6 +1,6 @@
 export async function Publish() {
   const { default: matter} = await import(blog.links.matter);
-  const { matchPreTags, replacePreTags} = await import(blog.links.htmlParsers);
+  const { highlightPreTagsInMarkdown, replacePreTagsInMarkdwon} = await import(blog.links.htmlParsers);
 
   const markdownInput = $select("#markdown-input");
   const frontmatterPattern = /^---\s*([\s\S]*?)\s*---/;
@@ -13,8 +13,8 @@ export async function Publish() {
   }
 
   const parsed = matter(markdownInput.value);
-  const codeBlocks = await matchPreTags(parsed);
-  const highlightedHtmlOutput = replacePreTags(parsed.body, codeBlocks);
+  const codeBlocks = await highlightPreTagsInMarkdown(parsed);
+  const highlightedHtmlOutput = replacePreTagsInMarkdwon(parsed.body, codeBlocks);
   const jsonOutput = {
     frontmatter: parsed.attributes && parsed.attributes,
     html: highlightedHtmlOutput,

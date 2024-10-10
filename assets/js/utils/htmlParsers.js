@@ -1,4 +1,4 @@
-export async function matchPreTags(parsed) { 
+export async function highlightPreTagsInMarkdown(parsed) { 
     const { codeToHtml } = await import(blog.links.shiki);
     const { transformerRenderWhitespace } = await import(blog.links.spaceTransformer);
     const parser = new DOMParser();
@@ -19,7 +19,7 @@ export async function matchPreTags(parsed) {
     );
   }
 
-  export function replacePreTags(htmlString, preTagsArray) {
+  export function replacePreTagsInMarkdown(htmlString, preTagsArray) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, "text/html");
     const preTags = doc.querySelectorAll("pre");

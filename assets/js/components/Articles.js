@@ -6,7 +6,6 @@ export async function Articles() {
   const page = $select(`#article-page`);
   const nextPage = page ? Number(page.value) + 1 : 1;
   const articles = await blog.loadData(nextPage);
-  console.log(articles);
 
   if(page){
     page.value = nextPage; 

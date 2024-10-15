@@ -50,16 +50,5 @@ auth({
 $register(Blog, Articles, Profile, PostEditor, Publish, Header);
 $render(Blog);
 
-page('/', () => {
-  $render(Blog);
-});
-page('/blog', () => {
-  $render(Profile);
-});
-page('/publish', () => {
-  $render(PostEditor);
-})
-page();
-
 
 

@@ -1,6 +1,6 @@
   export function Blog() {
     return `
-      <div id="layout" class="">
+      <div id="layout">
         <Header />
         <main class="font-sans text-gray-800 leading-relaxed max-w-3xl mx-auto p-4 overflow-x-hidden">
           <Articles />  

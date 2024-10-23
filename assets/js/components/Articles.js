@@ -24,10 +24,11 @@ export async function Articles() {
               >
                 <h1 class="text-3xl font-bold pt-4 mb-3 break-words title">${article.frontmatter.title}</h1>
                 <div class="tags flex flex-wrap mb-3">
-                  ${article.frontmatter.tags && article.frontmatter.tags
+                  ${
+                    article.frontmatter.tags && article.frontmatter.tags
                     .split(',')
                     .map((tag) => `<div class="tag bg-gray-200 py-1 px-3 rounded-full mr-2 mb-2 text-sm">${tag}</div>`)
-                    .join('')}
+                  }
                 </div>
                 <ArticleMetaData metadata=${article.metadata} date=${article.createdAt} />
                 <div 
@@ -37,7 +38,7 @@ export async function Articles() {
                 </div>
               </div>
               <ReadMore status="false" articleId=${article.id} action="add" />
-            `;}).join('') : "<div>No more articles. Check back later.</div>"
+            `;}) : "<div>No more articles. Check back later.</div>"
       }
     </div>
 

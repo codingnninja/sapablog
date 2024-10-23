@@ -1,14 +1,14 @@
 export async function Publish() {
-  const { default: matter} = await import(blog.links.matter);
-  const htmlParsers = await import(blog.links.htmlParsers);
-
+  
   const markdownInput = $select("#markdown-input");
   const frontmatterPattern = /^---\s*([\s\S]*?)\s*---/;
-
   if (!frontmatterPattern.test(markdownInput.value)) {
     $select(`#editor-notif[add|textContent=A proper Markdown string with frontmatter is expected]`);
     return "";
   }
+
+  const { default: matter} = await import(blog.links.matter);
+  const htmlParsers = await import(blog.links.htmlParsers);
 
   const parsed = matter(markdownInput.value);
   const codeBlocks = await htmlParsers.highlightPreTagsInMarkdown(parsed);
